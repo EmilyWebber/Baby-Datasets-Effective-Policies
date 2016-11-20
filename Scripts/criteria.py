@@ -1,25 +1,6 @@
 import csv
 
 class Criteria(object):
-	'''
-	Is used to handle all of the criteria to create a baby data set 
-		For building the architecture of Effective Policies!!!
-
-	This is basically one gigantic dictionary that hashes all of the unique values we need to integers, either 0s or 1s.
-		The default is going to be a 0. 
-
-	When we meet the critera,
-		we switch the 0 to a 1.
-
-	For the row-by-row iteration in the create_baby_data_set.py,
-		We'll pass each row into this class.
-		Then we'll index into the critera dictionary.
-		If there's a 1,
-			we skip the row.
-		If there's a 0,
-			We write the row to disk, 
-			And add a 1 to the dictionary.
-	'''
 
 	def __init__(self):
 		self.control_state_list = ["Michigan", "Georgia", "Ohio", "Missouri", "Delaware", "Arizona", "Indiana", "NorthCarolina", "Oregon", "Washington"]
@@ -49,7 +30,7 @@ class Criteria(object):
 		c = {}
 
 		for year in self.year_list:
-			
+
 			# make a dictionary for that year
 			c[year] = {}
 
@@ -81,5 +62,5 @@ class Criteria(object):
 				return False
 
 			else:
-				
+
 				return True
